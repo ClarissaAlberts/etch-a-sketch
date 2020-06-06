@@ -1,0 +1,52 @@
+#container {
+    line-height: 0;
+    width: 700px;
+    height: 700px;
+    margin: auto;
+}
+
+.square {
+    display: inline-block;
+    
+}
+
+.filled {
+    background-color: #1a1a1a !important;
+    outline: 1px solid #1a1a1a !important;
+}
+
+.not-filled {
+    background-color: #f4f3f2;
+    outline: 1px solid #e5e4e4;
+}
+
+
+#btn-wrapper {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#apply-btn {
+    padding: 5px;
+    width: 70px;
+    margin: 5px;
+}
+
+#reset-btn {
+    padding: 5px;
+    width: 120px;
+    margin: 5px;
+    margin-left: 20px;
+}
+
+#btn-wrapper input {
+    margin: 5px;
+    width: 70px;
+    height: 20px;
+}
+
+#btn-wrapper label {
+    margin: 5px;
+}
