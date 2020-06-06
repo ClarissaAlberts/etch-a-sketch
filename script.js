@@ -47,7 +47,7 @@ function removeElement(item) {
 
 function addListener() {
     const pixel = document.querySelectorAll(".square");
-    pixel.forEach(pixel => pixel.addEventListener('click', () => pixel.classList.toggle("filled")));
+    pixel.forEach(pixel => pixel.addEventListener('mousedown', () => pixel.classList.toggle("filled")));
 }
     
 
