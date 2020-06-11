@@ -10,22 +10,42 @@
 </head>
 
 <body>
+    
+    <main>
+    
     <div id="btn-wrapper">
         
         <label for="canvas-size">Canvas size: </label>
         <input type="text" id="canvas-size" name="canvas-size">
         
         <button type="button" id="apply-btn" onclick="getCanvasSize();">Apply</button><br>
-        <button type="button" id="reset-btn" onclick="resetCanvas()">Reset Canvas</button>
+        <button type="button" id="reset-btn" onclick="resetCanvas();">Reset Canvas</button>
+        <button type="button" id="grid-button" onclick="gridButton();">Grid Off</button>
         
     </div>
+    
     
     
     <div id="container">
     
     </div>
+        
+        
+    <div id="bottom-wrapper">
+        
+        <div id="black-color" class="color-active"></div>
+        <div id="red-color"></div>
+        <div id="blue-color"></div>
+        <div id="green-color"></div>
+        <div id="yellow-color"></div>
+        <div id="orange-color"></div>
+        <div id="purple-color"></div>
+        
+        
     
-    
+    </div>
+
+    </main>
     
     
   <script src="script.js"></script>
