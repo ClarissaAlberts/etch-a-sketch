@@ -190,7 +190,7 @@ function removeClasses(item) {
     item.classList.remove("filled");
     item.classList.add("not-filled");
     item.style.backgroundColor = notFilled.style.backgroundColor;
-    item.style.outline = notFilled.style.outline;
+    item.style.outline = "1px solid #e8e7e7";
 }
 
 //loop function that calls the function below this one when the "grid off" button is pressed
@@ -218,7 +218,6 @@ function toggleGrid(item) {
     else if (item.className === "not-filled" && item.style.outline == "none") {
         item.style.outline = "1px solid #e8e7e7";
         grid = true;
-        console.log(notFilled);
     }
     else if (item.className === "filled" && item.style.outline == "none") {
         item.style.outline = "1px solid " + item.style.backgroundColor;
