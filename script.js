@@ -1,6 +1,6 @@
 const container = document.querySelector('#container');
 let square;
-let grid = "true";
+let grid = true;
 let canvasSize = 16;
 let color = "#1a1a1a";
 let outlineColor = "#1a1a1a";
@@ -169,9 +169,9 @@ function fillListener(item) {
         }
         else if (item.className === "filled") {
             item.classList.replace("filled", "not-filled");
-            item.style.backgroundColor = notFilled.style.backgroundColor;
+            item.style.backgroundColor = "#faf7f7";
             if (grid == true) {
-            item.style.outline = notFilled.style.outline;
+            item.style.outline = "1px solid #e8e7e7";
             }
         }
     });
@@ -189,7 +189,7 @@ function resetCanvas() {
 function removeClasses(item) {
     item.classList.remove("filled");
     item.classList.add("not-filled");
-    item.style.backgroundColor = notFilled.style.backgroundColor;
+    item.style.backgroundColor = "#faf7f7";
     item.style.outline = "1px solid #e8e7e7";
 }
 
