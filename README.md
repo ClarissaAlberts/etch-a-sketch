@@ -15,6 +15,12 @@ Click the "Reset Canvas" button to start over.
 
 **Changelog:**
 
+12-Jun-2020 version 2.02:
+  - Fixed bug where if more than half of the canvas was filled with a color, the "reset canvas" button would cause the canvas to be filled with that color.
+  - Fixed a bug where if the "reset canvas" button was clicked while the grid was off, it would turn the grid back on.
+  - Fixed a bug where resetting the canvas would cause the grid to be the wrong color on colored pixel.
+  - Added temporary error message if invalid unput is given in the "canvas size" test box.
+
 12-Jun-2020 version 2.01:
   - Minor CSS bugfixes.
   - Fixed README file.

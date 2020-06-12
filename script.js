@@ -110,7 +110,7 @@ purple.addEventListener("click", function() {
 //function that creates "pixels" on the board according to the value of variable canvasSize which is 16 by default, but can be changed with user input
 function createCanvas() {
     if (canvasSize === NaN || canvasSize <= 0 || canvasSize > 128) {
-        return;
+        alert("Please enter a number from 1 to 128!");
     }
     for (let i = 0; i < canvasSize; i++) {
     for (let n = 1; n < canvasSize; n++) {
@@ -190,7 +190,9 @@ function removeClasses(item) {
     item.classList.remove("filled");
     item.classList.add("not-filled");
     item.style.backgroundColor = "#faf7f7";
+    if (grid == true) {
     item.style.outline = "1px solid #e8e7e7";
+    }
 }
 
 //loop function that calls the function below this one when the "grid off" button is pressed
