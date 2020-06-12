@@ -110,7 +110,7 @@ purple.addEventListener("click", function() {
 //function that creates "pixels" on the board according to the value of variable canvasSize which is 16 by default, but can be changed with user input
 function createCanvas() {
     if (canvasSize === NaN || canvasSize <= 0 || canvasSize > 128) {
-        alert("Please enter a number from 1 to 128!");
+        return;
     }
     for (let i = 0; i < canvasSize; i++) {
     for (let n = 1; n < canvasSize; n++) {
@@ -126,7 +126,7 @@ function createCanvas() {
 //function that creates each individual "pixel" and sizes them depending on how many total "pixels" there are
 function createSquare() {
     square = document.createElement('div');
-    square.setAttribute('id','square');
+    square.classList.add('square');
     square.classList.toggle('not-filled');
     square.style.height = 700 / canvasSize + "px";
     square.style.width = 700 / canvasSize + "px";
@@ -135,7 +135,7 @@ function createSquare() {
 
 //loop function that removes previous "pixels" and adds new "pixels" according to user input
 function getCanvasSize(){
-    let elem = document.querySelectorAll("#square");
+    let elem = document.querySelectorAll(".square");
     elem.forEach(removeElement);
     let elem2 = container.querySelectorAll("br");
     elem2.forEach(removeElement);
@@ -153,21 +153,21 @@ function removeElement(item) {
 
 //loop function that adds a listener to every "pixel"
 function addListener() {
-    const pixel = document.querySelectorAll("#square");
+    const pixel = document.querySelectorAll(".square");
     pixel.forEach(fillListener);
 }
 
 //function that is called by the function above to add a mouesdown listener to every "pixel" and cause it to be "filled in" when user clicks on a pixel
 function fillListener(item) {
     item.addEventListener('mousedown', function() {
-        if (item.className === "not-filled") {
+        if (item.classList.contains( "not-filled")) {
             item.classList.replace("not-filled", "filled");
             item.style.backgroundColor = color;
             if (grid == true) {
             item.style.outline = "1px solid " + outlineColor;
             }
         }
-        else if (item.className === "filled") {
+        else if (item.classList.contains( "filled")) {
             item.classList.replace("filled", "not-filled");
             item.style.backgroundColor = "#faf7f7";
             if (grid == true) {
@@ -181,7 +181,7 @@ function fillListener(item) {
 
 //loop function that removes the "filled" classes from every "pixel" using the function below this one
 function resetCanvas() {
-    let elem = document.querySelectorAll("#square");
+    let elem = document.querySelectorAll(".square");
     elem.forEach(removeClasses);
 }
 
@@ -197,7 +197,7 @@ function removeClasses(item) {
 
 //loop function that calls the function below this one when the "grid off" button is pressed
 function gridButton() {
-    let elem = document.querySelectorAll("#square");
+    let elem = document.querySelectorAll(".square");
     elem.forEach(toggleGrid);
     if (grid == false) {
         let gridBtn =
@@ -217,11 +217,11 @@ function toggleGrid(item) {
         item.style.outline = "none";
         grid = false;
     }
-    else if (item.className === "not-filled" && item.style.outline == "none") {
+    else if (item.classList.contains( "not-filled") && item.style.outline == "none") {
         item.style.outline = "1px solid #e8e7e7";
         grid = true;
     }
-    else if (item.className === "filled" && item.style.outline == "none") {
+    else if (item.classList.contains( "filled") && item.style.outline == "none") {
         item.style.outline = "1px solid " + item.style.backgroundColor;
         grid = true;
     }

@@ -37,7 +37,7 @@ main {
     margin: auto;
 }
 
-#square {
+.square {
     display: inline-block;
     
 }
@@ -217,3 +217,5 @@ input {
     color: #c26dd1;
     transition-duration: 0.3s;
 }
+
+
