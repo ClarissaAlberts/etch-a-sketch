@@ -109,8 +109,9 @@ purple.addEventListener("click", function() {
 
 //function that creates "pixels" on the board according to the value of variable canvasSize which is 16 by default, but can be changed with user input
 function createCanvas() {
-    if (canvasSize === NaN || canvasSize <= 0 || canvasSize > 128) {
-        return;
+    if (isNaN(canvasSize) || canvasSize <= 0 || canvasSize > 128) {
+        canvasSize = 16;
+        alert("Please enter a number from 1 to 128!");
     }
     for (let i = 0; i < canvasSize; i++) {
     for (let n = 1; n < canvasSize; n++) {
@@ -139,7 +140,12 @@ function getCanvasSize(){
     elem.forEach(removeElement);
     let elem2 = container.querySelectorAll("br");
     elem2.forEach(removeElement);
-    canvasSize = document.getElementById("canvas-size").value;
+    if (isNaN(canvasSize) || canvasSize <= 0 || canvasSize > 128) {
+        canvasSize = 16;
+    }
+    else {
+        canvasSize = document.getElementById("canvas-size").value;
+    }
     createCanvas();
     addListener();
         }
